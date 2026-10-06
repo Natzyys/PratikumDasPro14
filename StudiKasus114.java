@@ -7,10 +7,8 @@ public class StudiKasus114 {
 
         System.out.print("masukkan jumlah cup : ");
         jumlahCup = input.nextInt();
-
         System.out.print("masukkan uang bayar :");
         uangBayar = input.nextInt();
-
         totalHarga = jumlahCup * hargaPerCup;
         diskon = 0;
         if (totalHarga >= 100000) {
@@ -20,7 +18,7 @@ public class StudiKasus114 {
         System.out.println("total harga :" + totalHarga);
         System.out.println("diskon : " + diskon);
         System.out.println("total bayar : " + totalBayar);
-    
+
         if (uangBayar < totalBayar) {
             System.out.println("uang bayar kurang : " + (totalBayar - uangBayar));
         } else {
