@@ -4,34 +4,56 @@ public class StudiKasus214 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String namaMahasiswa, jenisKegiatan, status;
-        int jumlahDokumen, peringkatJuara;
+        System.out.print("Nama mahasiswa : ");
+        String nama = input.nextLine();
 
-        System.out.print("masukkan nama mahasiswa : ");
-        namaMahasiswa = input.nextLine();
+        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : ");
+        String jenis = input.nextLine().trim().toUpperCase();
 
-        System.out.print("masukkan jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/lainnya) : ");
-        jenisKegiatan = input.nextLine();
+        String status;
 
-        System.out.print("masukkan jumlah dokumen : ");
-        jumlahDokumen = input.nextInt();
+        if (jenis.equalsIgnoreCase("BELMAWA") || jenis.equalsIgnoreCase("BAKORMA") || jenis.equalsIgnoreCase("MANDIRI")) {
+            System.out.print("Jumlah dokumen : ");
+            int dokumen = input.nextInt();
+            System.out.print("Peringkat juara : ");
+            int peringkat = input.nextInt();
 
-        System.out.print("masukkan peringkat juara (1/2/3) isi 0 jika bukan juara: ");
-        peringkatJuara = input.nextInt();
-
-        if (jumlahDokumen >= 4) {
-            if (peringkatJuara == 1) {
-                status = "Lolos, dana penghargaan diberikan";
-            } else if (peringkatJuara == 2) {
-                status = "Lolos, dana penghargaan diberikan";
-            } else if (peringkatJuara == 3) {
-                status = "Lolos, dana penghargaan diberikan";
+            if (dokumen < 4) {
+                status = "Dokumen tidak lengkap (kurang " + (4 - dokumen)
+                        + " dokumen). Dana penghargaan tidak diberikan";
             } else {
-                status = "Mohon maaf anda bukan juara, dana penghargaan tidak diberikan";
+                if (peringkat >= 1 && peringkat <= 3) {
+                    status = "Dokumen lengkap. Juara " + peringkat
+                            + ". Dana penghargaan diberikan";
+                } else {
+                    status = "Dokumen lengkap, tetapi bukan Juara 1, 2, atau 3"
+                            + "Dana penghargaan tidak diberikan";
+                }
             }
+        } else if (jenis.equalsIgnoreCase("PKM")) {
+            System.out.print("Jumlah dokumen : ");
+            int dokumen = input.nextInt();
+            System.out.print("Status pendanaan PKM (1 = lolos, 0 = tidak lolos) : ");
+            int lolos = input.nextInt();
+
+            if (dokumen < 4) {
+                status = "Dokumen tidak lengkap (kurang " + (4 - dokumen)
+                        + " dokumen), Dana penghargaan tidak diberikan";
+            } else {
+                if (lolos == 1) {
+                    status = "Dokumen lengkap. Tim lolos pendanaan. Dana penghargaan diberikan";
+                } else {
+                    status = "Dokumen lengkap, tetapi tim tidak lolos pendanaan"
+                            + "Dana penghargaan tidak diberikan";
+                }
+            }
+        } else if (jenis.equalsIgnoreCase("LAINNYA")) {
+            status = "Kegiatan Lainnya tidak memperoleh dana penghargaan";
         } else {
-            status = "Dokumen kurang, kurang " + (4 - jumlahDokumen) + " dokumen lagi" + ", dana penghargaan tidak diberikan";
+            status = "Jenis kegiatan tidak dikenali";
         }
-        System.out.println("Status: " + status);
+
+        System.out.println("Status : " + status);
+
     }
 }
