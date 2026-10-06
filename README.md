@@ -1,3 +1,8 @@
+This is my repo
+Nama : Krishna alief bahroin zain
+NIM 264107020201
+Kelas : TI-1B
+
 Hasil Uji Studi Kasus 2 oleh Muhammad Alif Sya'bani No.Absen 18
 
 | No | Jenis   | Dokumen | Juara/Dana | Output                              | Sesuai? |
