@@ -19,6 +19,15 @@ public class StudiKasus214 {
         System.out.print("masukkan peringkat juara (1/2/3) isi 0 jika bukan juara: ");
         peringkatJuara = input.nextInt();
 
-        
+        if (jumlahDokumen >= 4 && peringkatJuara == 1) {
+            status = "Lolos, dana penghargaan diberikan";
+        } else if (jumlahDokumen >= 4 && peringkatJuara == 2) {
+            status = "Lolos, dana penghargaan diberikan";
+        } else if (jumlahDokumen >= 4 && peringkatJuara == 3) {
+            status = "Lolos, dana penghargaan diberikan";
+        } else {
+            status = "Dokumen tidak lengkap atau bukan juara, dana penghargaan tidak diberikan";
+        }
+        System.out.println("Status: " + status);
     }
 }
