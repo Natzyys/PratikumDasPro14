@@ -1,4 +1,4 @@
-Hasil Uji Studi Kasus 2 oleh Muhammad Alif Sya'bani
+Hasil Uji Studi Kasus 2 oleh Muhammad Alif Sya'bani No.Absen 18
 
 | No | Jenis   | Dokumen | Juara/Dana | Output                              | Sesuai? |
 |----|---------|---------|------------|-------------------------------------|---------|
